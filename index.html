@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Site de Realidade Aumentada</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden">
+    <img src="facilitime.png" alt="facilitime" style="width: 100px; height: 100px; position: absolute; top: 10px; left: 10px; z-index: 1000; pointer-events: none; object-fit: contain;">
+
+    <a-scene arjs>
+      <!-- Marcador padrão -->
+      <a-marker
+        type="pattern"
+        url="./pattern.pat"
+        emitevents="true"
+        cursor="rayOrigin: mouse"
+      >
+        <a-entity
+          position="0 1 0"
+          scale="0.02 0.02 0.02"
+          rotation="0 0 0"
+          gltf-model="./pikachu.glb"
+        >
+        </a-entity>
+      </a-marker>
+      <a-marker
+        type="pattern"
+        url="./pattern-f-dna.patt"
+        emitevents="true"
+        cursor="rayOrigin: mouse"
+      >
+        <a-entity
+          position="0 1 0"
+          scale="0.01 0.01 0.01"
+          rotation="0 0 0"
+          gltf-model="./dna.glb"
+        >
+        </a-entity>
+      </a-marker>
+
+      <!-- Câmera -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
